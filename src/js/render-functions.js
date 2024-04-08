@@ -1,0 +1,26 @@
+export function clearGallery() {
+  const galleryElement = document.querySelector('.gallery');
+  galleryElement.innerHTML = '';
+}
+
+export function renderImages(images) {
+  const galleryElement = document.querySelector('.gallery');
+  let imageHTML = '';
+
+  images.forEach(image => {
+    imageHTML += `
+      <a class="gallery__item" href="${image.largeImageURL}">
+        <figure class="gallery__figure">
+          <img class="gallery__img" src="${image.webformatURL}" alt="${image.tags}" loading="lazy">
+          <figcaption class="gallery__figcaption">
+            <div class="gallery__caption">Likes: ${image.likes}</div>
+            <div class="gallery__caption">Views: ${image.views}</div>
+            <div class="gallery__caption">Comments: ${image.comments}</div>
+            <div class="gallery__caption">Downloads: ${image.downloads}</div>
+          </figcaption>
+        </figure>
+      </a>`;
+  });
+
+  galleryElement.innerHTML = imageHTML;
+}
