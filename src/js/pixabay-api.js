@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function fetchImages(query) {
+export async function fetchImages(query, page) {
   try {
     const response = await axios.get('https://pixabay.com/api/', {
       params: {
@@ -9,7 +9,7 @@ export async function fetchImages(query) {
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
-        page: 1,
+        page: page,
         per_page: 15,
       },
     });

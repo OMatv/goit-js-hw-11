@@ -9,7 +9,7 @@ export function renderImages(images) {
 
   images.forEach(image => {
     imageHTML += `
-      <a class="gallery__item" href="${image.largeImageURL}">
+      <a class="gallery__item" href="${image.largeImageURL}" target="_blank">
         <figure class="gallery__figure">
           <img class="gallery__img" src="${image.webformatURL}" alt="${image.tags}" loading="lazy">
           <figcaption class="gallery__figcaption">
