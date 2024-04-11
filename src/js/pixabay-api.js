@@ -8,7 +8,7 @@ export async function fetchImages(query, page) {
         q: query,
         image_type: 'photo',
         orientation: 'horizontal',
-        safesearch: true,
+        captions: true,
         page: page,
         per_page: 15,
       },

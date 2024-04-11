@@ -7,7 +7,7 @@
 @import url('./reset.css');
 
 .gallery {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -35,14 +35,10 @@
   border-radius: 0 0 8px 8px;
 }
 
-@media (max-width: 768px) {
-  .gallery__item {
-    width: calc(33.33% - 16px);
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery__item {
-    width: 100%;
-  }
+.loader {
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
 }
