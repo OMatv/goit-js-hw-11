@@ -34,11 +34,14 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0 0 8px 8px;
 }
-
 .loader {
-  display: block;
-  text-align: left;
+  display: none; /* Початково ховаємо лоудер */
+  text-align: center;
   margin-top: 20px;
   font-size: 16px;
   color: #333;
+}
+
+.loader.visible {
+  display: block; /* Показуємо лоудер при активному стані */
 }

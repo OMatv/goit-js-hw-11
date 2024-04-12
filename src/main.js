@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         position: 'topRight',
       });
     } finally {
-      loader.classList.remove('visible');
+      loader.style.display = 'none'; // Прибрати лоудер після завершення запиту
     }
   }
 
@@ -62,16 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('submit', handleSearchSubmit);
-
-  // Intersection Observer для завантаження додаткових зображень при прокрутці
-  const observer = new IntersectionObserver(
-    async entries => {
-      if (entries[0].isIntersecting) {
-        await loadMoreImages();
-      }
-    },
-    { threshold: 0 }
-  );
-
-  observer.observe(loader);
 });
